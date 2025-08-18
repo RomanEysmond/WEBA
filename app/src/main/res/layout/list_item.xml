@@ -28,7 +28,6 @@
 
             <TextView
                 android:id="@+id/nameApp"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -36,7 +35,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/montserrat"
                 android:maxLines="1"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/packageName"
                 app:layout_constraintStart_toStartOf="parent"
@@ -70,12 +69,14 @@
                 android:textSize="12sp"
                 app:cornerRadius="18dp"
                 app:iconGravity="end"
+                android:textColor="@color/black"
                 app:iconSize="16dp"
                 app:iconTint="#6BE06E"
+                android:backgroundTint="#C7BF8A"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:background="#7EFA83"
+
                 app:strokeColor="@color/black"
                 app:strokeWidth="1dp" />
 
