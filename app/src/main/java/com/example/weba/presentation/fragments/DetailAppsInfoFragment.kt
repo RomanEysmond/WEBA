@@ -25,7 +25,7 @@ private val REQUEST_QUERY_ALL_PACKAGES = 1001
 
 class DetailAppsInfoFragment : Fragment() {
     private val binding get() = _binding!!
-    private val viewModel: DetailAppsInfoViewModel by activityViewModels()
+    private val viewModel: AppsInfoViewModel by activityViewModels()
     private var param1: Int? = null
     
     override fun onCreateView(
@@ -62,14 +62,16 @@ class DetailAppsInfoFragment : Fragment() {
     }
 
     private fun observeViewModel() {
+        binding.swipeRefresh.isEnabled = false
         viewModel.loadState.observe(viewLifecycleOwner) { state ->
             when (state) {
-                is DetailAppsInfoViewModel.LoadState.Loading -> {
+                is AppsInfoViewModel.LoadState.Loading -> {
                     binding.circularProgress.visibility = View.VISIBLE
                     binding.progressText.text = getString(R.string.downloading)
+                    binding.recyclerView.visibility = View.GONE
                 }
 
-                is DetailAppsInfoViewModel.LoadState.Success -> {
+                is AppsInfoViewModel.LoadState.Success -> {
                     binding.circularProgress.visibility = View.GONE
                     binding.progressText.text = getString(R.string.success)
                     binding.recyclerView.visibility = View.VISIBLE
@@ -78,7 +80,7 @@ class DetailAppsInfoFragment : Fragment() {
                     binding.progressText.visibility = View.GONE
                 }
 
-                is DetailAppsInfoViewModel.LoadState.Error -> {
+                is AppsInfoViewModel.LoadState.Error -> {
                     binding.circularProgress.visibility = View.GONE
                     binding.progressText.text = getString(R.string.error_loading, state.message)
                     Toast.makeText(requireContext(), "Error: ${state.message}", Toast.LENGTH_LONG).show()

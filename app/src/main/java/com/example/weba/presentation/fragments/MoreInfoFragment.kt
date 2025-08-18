@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,7 @@ private const val ARG_PARAM1 = "index"
 class MoreInfoFragment : Fragment() {
 
     private val binding get() = _binding!!
-    private val viewModel: DetailAppsInfoViewModel by activityViewModels()
+    private val viewModel: AppsInfoViewModel by activityViewModels()
     private var index: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

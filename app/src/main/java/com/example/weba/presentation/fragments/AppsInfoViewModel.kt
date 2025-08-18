@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class DetailAppsInfoViewModel : ViewModel() {
+class AppsInfoViewModel : ViewModel() {
 
     sealed class LoadState {
         object Loading : LoadState()
