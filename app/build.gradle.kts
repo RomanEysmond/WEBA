@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.weba"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -57,6 +57,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(project(":domain"))
 
     /*implementation("androidx.compose.ui:ui:1.9.0")
     implementation("androidx.compose.material:material:1.9.0")

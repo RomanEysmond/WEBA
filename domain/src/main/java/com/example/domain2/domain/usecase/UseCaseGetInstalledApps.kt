@@ -4,7 +4,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import com.example.weba.domain.models.AppInfo
 import java.io.File
@@ -22,7 +21,7 @@ class UseCaseGetInstalledApps {
             @Suppress("DEPRECATION")
             packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
         }
-
+        //Фильтр системных приложений
         val userPackages = apps.filter { !isSystemPackage(it) }
 
         for (app in userPackages) {
@@ -70,6 +69,7 @@ class UseCaseGetInstalledApps {
                 (appInfo.flags and ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0
     }
 
+    //Функция расчёта контрольной суммы
     private fun calculateChecksum(filePath: String): String {
         return try {
             val file = File(filePath)

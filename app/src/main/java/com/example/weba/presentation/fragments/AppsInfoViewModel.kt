@@ -1,13 +1,10 @@
 package com.example.weba.presentation.fragments
 
 import android.app.Application
-import android.content.Context
 import android.content.pm.PackageManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.application
 import androidx.lifecycle.viewModelScope
 import com.example.weba.domain.usecase.UseCaseGetInstalledApps
 import com.example.weba.domain.models.AppInfo
@@ -41,13 +38,11 @@ class AppsInfoViewModel(application: Application) : AndroidViewModel(application
     fun loadApps(packageManager: PackageManager) {
         viewModelScope.launch(Dispatchers.Default) {
             _loadState.postValue(LoadState.Loading)
-
             UseCaseGetInstalledApps().getInstalledApps(
                 packageManager = packageManager,
                 _appsList
             )
             _loadState.postValue(LoadState.Success)
-
 
         }
 
