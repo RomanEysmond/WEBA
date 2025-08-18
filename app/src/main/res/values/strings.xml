@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WEBA</string>
+    <string name="more_informations">More information</string>
+    <string name="open_the_app">Open the app</string>
+    <string name="app_name_is_the">App name is %1$s</string>
+    <string name="package_name_is">Package name is %1$s</string>
+    <string name="app_version_is">App version is %1$s</string>
+    <string name="the_checksum_of_the_apk_file_is">The checksum of the apk file is %1$s</string>
+    <string name="ready">Подготовка...</string>
+    <string name="error_loading">Ошибка: %1$s</string>
+    <string name="success">Готово!</string>
+    <string name="downloading">Загрузка данных, пожалуйста, подождите...</string>
+    <string name="more_information">Подробнее</string>
+    <string name="app_icon">Иконка приложения</string>
+</resources>
