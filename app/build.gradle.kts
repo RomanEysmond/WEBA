@@ -60,6 +60,9 @@ dependencies {
 
     implementation(project(":domain"))
 
+    //Koin
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
     /*implementation("androidx.compose.ui:ui:1.9.0")
     implementation("androidx.compose.material:material:1.9.0")
     implementation("androidx.compose.ui:ui-tooling-preview:1.9.0")
