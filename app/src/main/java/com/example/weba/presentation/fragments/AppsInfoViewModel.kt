@@ -26,14 +26,6 @@ class AppsInfoViewModel(application: Application) : AndroidViewModel(application
     private val _appsList = MutableLiveData<List<AppInfo>>()
     val appsList: LiveData<List<AppInfo>> = _appsList
 
-   /* private val prefs = application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-    private val _data = MutableLiveData<List<AppInfo>>()
-    val data: LiveData<List<AppInfo>> = _data
-
-    init {
-        // Загрузка при инициализации
-        _data.value = prefs.getString("key_data", null)
-    }*/
 
     fun loadApps(packageManager: PackageManager) {
         viewModelScope.launch(Dispatchers.Default) {

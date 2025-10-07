@@ -12,6 +12,7 @@ import java.security.MessageDigest
 class UseCaseGetInstalledApps {
 
     fun getInstalledApps(packageManager: PackageManager, appsInfo: MutableLiveData<List<AppInfo>>) {
+
         val appsInfoData = mutableListOf<AppInfo>()
 
         // Получаем список приложений (совместимый способ)
@@ -37,12 +38,7 @@ class UseCaseGetInstalledApps {
                     packageManager.getPackageInfo(app.packageName, 0)
                 }
 
-                val versionCode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    packageInfo.longVersionCode.toString()
-                } else {
-                    @Suppress("DEPRECATION")
-                    packageInfo.versionCode.toString()
-                }
+
 
                 appsInfoData.add(
                     AppInfo(
